@@ -10,12 +10,12 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='Flask-WTF Tutorial',
+    name='Flask-WTF Tutorial (for Shadrak)',
     version='0.0.1',
     description='Tutorial to implement forms in your Flask app.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/toddbirchard/flask-wtform-tutorial',
+    url='https://github.com/toddbirchard/flask-wtforms-for-shadrack',
     author='Todd Birchard',
     author_email='toddbirchard@gmail.com',
     classifiers=[
@@ -37,7 +37,7 @@ setup(
         ],
     },
     project_urls={
-        'Bug Reports': 'https://github.com/toddbirchard/flask-wtform-tutorial/issues',
-        'Source': 'https://github.com/toddbirchard/flask-wtform-tutorial/',
+        'Bug Reports': 'https://github.com/toddbirchard/flask-wtforms-for-shadrack/issues',
+        'Source': 'https://github.com/toddbirchard/flask-wtforms-for-shadrack/',
     },
 )

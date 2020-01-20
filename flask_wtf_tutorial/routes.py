@@ -1,6 +1,6 @@
 from flask import url_for, render_template, redirect
 from flask import current_app as app
-from .forms import ContactForm, SignupForm
+from .forms import InfoForm
 
 
 @app.route('/')
@@ -9,22 +9,12 @@ def home():
                            template='home-template')
 
 
-@app.route('/contact', methods=('GET', 'POST'))
-def contact():
-    form = ContactForm()
+@app.route('/apply', methods=('GET', 'POST'))
+def new_apply():
+    form = InfoForm()
     if form.validate_on_submit():
         return redirect(url_for('success'), code=200)
-    return render_template('contact.html',
-                           form=form,
-                           template='form-template')
-
-
-@app.route('/signup', methods=('GET', 'POST'))
-def signup():
-    form = SignupForm()
-    if form.validate_on_submit():
-        return redirect(url_for('success'), code=200)
-    return render_template('signup.html',
+    return render_template('apply.html',
                            form=form,
                            template='form-template')
 

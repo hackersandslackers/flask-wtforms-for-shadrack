@@ -1,0 +1,237 @@
+{% extends "layout.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="formwrapper">
+    <form method="POST" action="{{ url_for('new_apply') }}">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <h1>What do you want to buy?</h1>
+            <div class="form-row">
+                <div class="col">
+                    {{ form.item.label }} {{form.item(placeholder="Iphone11 Pro") }} <br>
+                    {% if form.item.errors %}
+                        <ul class="errors">
+                            {% for error in form.item.errors %}
+                                <li style="color: red;">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    {{ form.cost.label }} {{form.cost }} <br>
+                    {% if form.cost.errors %}
+                        <ul class="errors">
+                            {% for error in form.cost.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="form-field" class="dropdown show">
+                {{ form.time.label }} {{form.time }} <br>
+                    {% if form.time.errors %}
+                        <ul>
+                            {% for error in form.time.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+            </div>
+
+            <h2>Tell us about yourself</h2>
+            <div class="form-row">
+                <div class="col">
+                    {{ form.name.label }} {{form.name }} <br>
+                    {% if form.name.errors %}
+                        <ul class="errors">
+                            {% for error in form.name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.national_id.label }} {{form.national_id }} <br>
+                    {% if form.national_id.errors %}
+                        <ul class="errors">
+                            {% for error in form.national_id.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    {{ form.user_address.label }} {{form.user_address }} <br>
+                    {% if form.user_address.errors %}
+                        <ul class="errors">
+                            {% for error in form.user_address.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.email.label }} {{form.email }} <br>
+                    {% if form.email.errors %}
+                        <ul class="errors">
+                            {% for error in form.email.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    {{ form.phone.label }} {{form.phone }} <br>
+                    {% if form.phone.errors %}
+                        <ul class="errors">
+                            {% for error in form.phone.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.birthday.label }} {{form.birthday }} <br>
+                    {% if form.birthday.errors %}
+                        <ul class="errors">
+                            {% for error in form.birthday.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="form-field">
+                {{ form.status.label }} {{form.status }} <br>
+                    {% if form.status.errors %}
+                        <ul class="errors">
+                            {% for error in form.status.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+            </div>
+
+
+            <h2>Tell us about your employment </h2>
+            <div class="form-row">
+                <div class="col">
+                    {{ form.employer.label }} {{form.employer }} <br>
+                    {% if form.employer.errors %}
+                        <ul class="errors">
+                            {% for error in form.employer.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.address.label }} {{form.address }} <br>
+                    {% if form.address.errors %}
+                        <ul class="errors">
+                            {% for error in form.address.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    {{ form.contract.label }} {{form.contract }} <br>
+                    {% if form.contract.errors %}
+                        <ul class="errors">
+                            {% for error in form.contract.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.occupation.label }} {{form.occupation }} <br>
+                    {% if form.occupation.errors %}
+                        <ul class="errors">
+                            {% for error in form.occupation.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <h2>Tell us about your finances</h2>
+            <div class="form-row">
+                <div class="col">
+                    {{ form.salary.label }} {{form.salary }} <br>
+                    {% if form.salary.errors %}
+                        <ul class="errors">
+                            {% for error in form.salary.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.loan.label }} {{form.loan }} <br>
+                    {% if form.loan.errors %}
+                        <ul class="errors">
+                            {% for error in form.loan.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    {{ form.dependents.label }} {{form.dependents }} <br>
+                    {% if form.dependents.errors %}
+                        <ul class="errors">
+                            {% for error in form.dependents.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {{ form.expenditures.label }} {{form.expenditures }} <br>
+                    {% if form.expenditures.errors %}
+                        <ul class="errors">
+                            {% for error in form.expenditures.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+
+{% endblock %}

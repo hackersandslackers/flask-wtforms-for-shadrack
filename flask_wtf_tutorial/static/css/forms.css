@@ -1,6 +1,16 @@
 form {
-  background: white;
   width: 100%;
+  padding: 50px;
+  background: white;
+}
+
+form h1 {
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+form h2 {
+  margin: 30px 0 10px;
 }
 
 .form-field {
@@ -8,48 +18,49 @@ form {
 }
 
 .container {
-  padding: 80px;
   display: flex;
   justify-content: space-around;
+  width: 100%;
+  padding: 80px;
 }
 
 .title {
-  font-size: 1.7rem;
-  color: #5f6988;
-  font-weight: 300;
-  border-bottom: 1px solid #dbe3ec;
-  padding-bottom: 5px;
   margin: 0 0 40px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dbe3ec;
+  color: #5f6988;
+  font-size: 1.7rem;
+  font-weight: 300;
 }
 
 .formwrapper {
+  width: 500px;
+  padding: 4s0px;
   background: white;
-  width: 350px;
   box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
-  padding: 50px;
 }
 
 label {
-  font-size: .9em;
-  color: #5f6988;
-  margin-bottom: 3px;
   display: block;
-  font-weight: 300;
+  margin-bottom: 3px;
+  color: #5f6988;
+  font-size: .8em;
+  font-weight: 400;
 }
 
 input, textarea, select {
-  padding: 10px 13px;
-  margin-bottom: 15px;
   width: -webkit-fill-available;
-  border-radius: 2px;
+  margin-bottom: 15px;
+  padding: 10px;
   border: 1px solid #d4d9e3;
-  font-weight: 200;
-  color: #4d5060;
-  font-family: 'Poppins', sans-serif;
-  transition: all .3s ease-out;
-  font-size: .9em;
+  border-radius: 2px;
   outline-color: transparent;
   outline-style: none;
+  color: #4d5060;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8em;
+  font-weight: 200;
+  transition: all .3s ease-out;
 }
 
 select {
@@ -57,13 +68,13 @@ select {
 }
 
 select::after {
-  content: "hello";
+  display: block;
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  display: block;
   border-top: 20px solid #f00;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  content: "hello";
 }
 
 input[type="text"]::placeholder {
@@ -81,64 +92,76 @@ select:hover {
 input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-  background: white;
   border-color: #5eb9d7;
+  background: white;
   box-shadow: unset;
 }
 
-input[type="submit"] {
-  background: #5eb9d7;
-  border: 0;
-  color: white;
-  border-radius: 2px;
+input[type="submit"],
+.btn {
+  width: 100%;
   margin-top: 15px;
-  font-weight: 400;
+  padding: 10px;
+  border: 0;
   border: 1px solid #5eb9d7;
+  border-radius: 2px;
+  background: #5eb9d7;
+  color: white;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
   transition: all .3s ease-out;
 }
 
-input[type="submit"]:hover {
-  cursor: pointer;
+input[type="submit"]:hover,
+.btn:hover {
   background: white;
   color: #5eb9d7;
+  cursor: pointer;
 }
 
 .success-wrapper {
-  background: white;
   width: 350px;
-  box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
   padding: 50px;
+  background: white;
+  box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
 }
 
 .errors {
-  list-style: none;
-  margin: 10px 0;
-  position: absolute;
   z-index: 10;
-  right: -222px;
+  position: absolute;
   top: 0;
+  right: -222px;
   bottom: 0;
-  background: #fae7ea;
-  padding: 9px 15px;
-  border-radius: 3px;
-  border: 1px solid #e1c5c5;
-  color: #8d7575;
   width: 182px;
-  text-align: center;
   height: fit-content;
+  margin: 10px 0;
   margin: auto;
+  padding: 9px 15px;
+  border: 1px solid #e1c5c5;
+  border-radius: 3px;
+  background: #fae7ea;
+  color: #8d7575;
+  font-size: .8em;
+  list-style: none;
+  text-align: center;
 }
 
 i {
   position: absolute;
-  margin: auto;
   top: 4px;
-  bottom: 0;
   right: 16px;
+  bottom: 0;
   height: fit-content;
+  margin: auto;
   color: grey;
 }
 
 .g-recaptcha div {
   margin: auto;
+}
+
+.col {
+  position: relative;
 }
